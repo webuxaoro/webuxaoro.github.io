@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Uxaoro Beta</title>
+  <style>
+    :root {
+      color-scheme: dark light;
+      --bg: #0b0b10;
+      --card: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.14);
+      --text: #f5f5f7;
+      --muted: #a0a0ab;
+      --accent: #6366f1;
+      --accent2: #8b5cf6;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f7fb;
+        --card: rgba(0, 0, 0, 0.04);
+        --border: rgba(0, 0, 0, 0.12);
+        --text: #12131a;
+        --muted: #5b5d6b;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.22), transparent 55%), var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+    }
+    h1 {
+      margin: 14px 0 8px;
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .grid {
+      display: grid;
+      gap: 10px;
+      margin: 14px 0 20px;
+    }
+    .item {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+    .item strong {
+      display: block;
+      font-size: 13.5px;
+      margin-bottom: 3px;
+      color: var(--text);
+    }
+    .item span {
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    button {
+      appearance: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      padding: 11px 16px;
+      border-radius: 12px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.12s ease, opacity 0.12s ease;
+    }
+    button:active { transform: scale(0.98); }
+    /* Icons are inlined from the repository's icons/ set (svgrepo) so this
+       page stays self-contained inside the sandboxed news iframe. */
+    button .ico {
+      display: inline-flex;
+      width: 17px;
+      height: 17px;
+      flex: none;
+    }
+    button .ico svg { width: 100%; height: 100%; display: block; }
+    button .lab { min-width: 0; }
+    button.primary {
+      flex: 1;
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <span class="pill">Uxaoro v0.1.0 · Beta News</span>
+    <h1>Welcome to Uxaoro Beta</h1>
+    <p>
+      This popup is rendered from <code>https://fourtexec.site/uxaoro/news/popup-welcome.html</code>.
+      Because <code>closable: false</code> is set in <code>config.json</code>, it only closes when you tap
+      <strong>Continue to Uxaoro</strong> below.
+    </p>
+    <div class="grid">
+      <div class="item">
+        <strong>End-to-End Encrypted Wire &amp; Calls</strong>
+        <span>Messages and 1:1 calls stay encrypted between your devices.</span>
+      </div>
+      <div class="item">
+        <strong>News Tab &amp; Dynamic HTML Pages</strong>
+        <span>Open the News tab anytime to read announcements configured from config.json and news.md.</span>
+      </div>
+      <div class="item">
+        <strong>UX Wallet, Premium, Sales &amp; Badges</strong>
+        <span>Customize your look, apply icon badges, and check active sales in the More tab on Android or sidebar on Web/Desktop.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button type="button" id="btn-fs" onclick="toggleFs()"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 22C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2C6.22876 2 4.34315 2 3.17157 3.17157C2.92939 3.41375 2.73727 3.68645 2.58487 4M2 10C2 9.26451 2 8.60074 2.00869 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M14 2C17.7712 2 19.6569 2 20.8284 3.17157C22 4.34315 22 6.22876 22 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M14 22C17.7712 22 19.6569 22 20.8284 20.8284C21.0706 20.5862 21.2627 20.3136 21.4151 20M22 14C22 14.7355 22 15.3993 21.9913 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="lab">Full screen</span></button>
+    <button type="button" class="primary" id="btn-close" onclick="closePopup()"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H6.5M20 12L14 6M20 12L14 18M20 12H9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lab">Continue to Uxaoro</span></button>
+  </div>
+
+  <script>
+    /* Full-screen icons inlined from icons/full-screen-svgrepo-com.svg and
+       icons/quit-full-screen-svgrepo-com.svg, so the button always carries a
+       real icon (the same markup the static button uses). */
+    var ICO_FS = '<span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 22C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 2C6.22876 2 4.34315 2 3.17157 3.17157C2.92939 3.41375 2.73727 3.68645 2.58487 4M2 10C2 9.26451 2 8.60074 2.00869 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M14 2C17.7712 2 19.6569 2 20.8284 3.17157C22 4.34315 22 6.22876 22 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M14 22C17.7712 22 19.6569 22 20.8284 20.8284C21.0706 20.5862 21.2627 20.3136 21.4151 20M22 14C22 14.7355 22 15.3993 21.9913 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>';
+    var ICO_QUIT = '<span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 14C5.77124 14 7.65685 14 8.82843 15.1716C10 16.3431 10 18.2288 10 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M2 10C3.16976 10 4.15811 10 5 9.96504M10 2C10 5.77124 10 7.65685 8.82843 8.82843" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M14 22C14 18.2288 14 16.3431 15.1716 15.1716M22 14C20.8302 14 19.8419 14 19 14.035" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M22 10C18.2288 10 16.3431 10 15.1716 8.82843C14 7.65685 14 5.77124 14 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>';
+    var isFs = false;
+    function toggleFs() {
+      isFs = !isFs;
+      try {
+        if (window.UxaoroNews && typeof window.UxaoroNews.fullscreen === "function") {
+          window.UxaoroNews.fullscreen(isFs);
+        }
+      } catch (_) {}
+      try {
+        window.parent.postMessage({ type: "uxaoro-news-fullscreen", value: isFs }, "*");
+      } catch (_) {}
+      var btn = document.getElementById("btn-fs");
+      if (btn) {
+        btn.innerHTML = (isFs ? ICO_QUIT : ICO_FS)
+          + '<span class="lab">' + (isFs ? "Exit full screen" : "Full screen") + '</span>';
+      }
+    }
+
+    function closePopup() {
+      try {
+        if (window.UxaoroNews && typeof window.UxaoroNews.close === "function") {
+          window.UxaoroNews.close();
+          return;
+        }
+      } catch (_) {}
+      try {
+        window.parent.postMessage({ type: "uxaoro-news-close" }, "*");
+      } catch (_) {}
+      try {
+        location.href = "uxaoro://news/close";
+      } catch (_) {}
+    }
+  </script>
+</body>
+</html>

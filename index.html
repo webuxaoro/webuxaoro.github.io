@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uxaoro</title>
+  <link rel="icon" href="./applogo.jpg">
+  <link rel="stylesheet" href="./app.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+</head>
+<body>
+  <div id="root"></div>
+  <div id="call-layer" class="hidden">
+    <video id="remote-video" autoplay playsinline></video>
+    <video id="local-video" autoplay playsinline muted></video>
+    <div class="call-dim"></div>
+    <div class="call-card">
+      <div class="call-top">
+        <div class="call-avatar" id="call-avatar">?</div>
+        <div id="call-name">Call</div>
+        <div id="call-status">Connecting</div>
+        <div id="call-sub" class="call-sub">End-to-end encrypted</div>
+        <div id="call-emojis" class="call-emojis"></div>
+        <div id="call-key" class="call-key"></div>
+        <div class="call-hint">Ask the other person what emojis they see.<br>If they match yours, the call is 100% secure.</div>
+      </div>
+      <div class="call-bottom">
+        <div class="call-actions">
+          <button id="call-mute" class="round" title="Mute"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.35 5.91 5.78V20c0 .55.45 1 1 1s1-.45 1-1v-2.08c3.02-.43 5.42-2.78 5.91-5.78.1-.6-.39-1.14-1-1.14z"/></svg></button>
+          <button id="call-accept" class="round ok hidden" title="Answer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></button>
+          <button id="call-share" class="round hidden" title="Share screen"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/></svg></button>
+          <button id="call-hang" class="round big danger" title="Hang up"><svg class="flip-down" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></button>
+          <button id="call-speaker" class="round" title="Speaker"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+        </div>
+        <div id="call-mute-label" class="call-key">Hang up</div>
+      </div>
+    </div>
+  </div>
+  <script>window.UXAORO_API = 'https://api.fourtexec.site';</script>
+  <script src="./crypto.js"></script>
+  <script src="./icons.js"></script>
+  <script src="./media.js"></script>
+  <script src="./app.js"></script>
+  <script src="./devices.js"></script>
+</body>
+</html>
